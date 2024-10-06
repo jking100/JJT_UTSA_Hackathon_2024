@@ -7,3 +7,5 @@ We tested this idea on the Agricultural Census data from Texas. We filtered out 
 Next, we created a function that creates a sampling distribution for a given crop based on the relative likelihoods among all counties. The likelihoods are normalized and then sampled with replacement to create a sampling distribution. A second function bootstraps this process, repeating it a user-specified number of times and aggregating a list of counties by frequency of appearing in sampling distributions. In this way, we can generate a probabilistic list of where a crop may have been grown while still retaining uncertainty.
 
 However, this does not solve the county inference problem. The number of crops tested in the PDP far exceeds the number of crops in the census file. More complete commodity information in the census file could inform county inferences in the PDP data set via likelihoods by crop, but even then, imputation still comes with heavy caveats.
+
+Relevant data files for this track: /Provided_data/USDA_PDP_AnalyticalResults.csv, /Provided_data/AgChange/*
