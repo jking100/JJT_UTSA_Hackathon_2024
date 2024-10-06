@@ -38,7 +38,6 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
 
     *<span style="text-decoration:underline;">Results:</span>*
 
-
         Prompt:
         “Answer only with the name of the county where the city of {town},{state} is
         located. Add nothing else. If you can't figure it out quickly, respond with NULL. 
@@ -48,7 +47,7 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
         (monarch_data/updated_towns_with_counties.csv)
 
         $ wc -l monarch_data/updated_towns_with_counties.csv
-        13595 monarch_data/updated_towns_with_counties.csv
+            13595 monarch_data/updated_towns_with_counties.csv
 
 3. Execute combine_counties_and_monarch_us.py
 
@@ -56,13 +55,13 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
 
     *<span style="text-decoration:underline;">Results:</span>*
     
-    (monarch_data/updated_towns_with_counties.csv) +
-    (monarch_data/monarch_data_us.csv) is used to create ->
-    (monarch_data/monarch_data_us_with_counties.csv)
+        (monarch_data/updated_towns_with_counties.csv) +
+        (monarch_data/monarch_data_us.csv) is used to create ->
+        (monarch_data/monarch_data_us_with_counties.csv)
 
-    grep ',NULL$' monarch_data/monarch_data_us_with_counties.csv | wc -l
-        1907
-        (1907/137662 = 1.38% miss rate)
+        grep ',NULL$' monarch_data/monarch_data_us_with_counties.csv | wc -l
+            1907
+            (1907/137662 = 1.38% miss rate)
 
 
 
