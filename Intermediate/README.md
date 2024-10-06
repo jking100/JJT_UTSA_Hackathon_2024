@@ -88,6 +88,7 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
     displayed to the user.
 
     *<span style="text-decoration:underline;">Results:</span>*
+    
         Prompt:
         "In which county is the town of {town} located in {state}? The current 
         data suggests it is in {county}. Is this correct? Answer ONLY 'yes' or 
