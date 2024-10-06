@@ -1,5 +1,5 @@
-# JJT_UTSA_Hackathon_2024
+# JJT UTSA Hackathon 2024
 UTSA Hackathon 2024
-Jordan Miller
-Joseph King
+Jordan Miller \
+Joseph King \
 Taylor Woodard
