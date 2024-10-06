@@ -57,26 +57,15 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
 
     This script joins (monarch_data/updated_towns_with_counties.csv) on (monarch_data/monarch_data_us.csv) creating (monarch_data/monarch_data_us_with_counties.csv) which is identical to our original master US dataset with the exception of a new column containing the proper county for each row. Polling this entire new dataset with the same techniques as above we observe a 1.38% rate of failure to locate a county for a given row, and feeding a sample of 200 rows from this new dataset back into GPT-4 as before, the LLM now estimates a 1% error rate. The reduction in estimated error rate makes sense as most users conform to proper submission standards, and the unique city state combination dataset (monarch_data/unique_town_state_us.csv) will over represent the users that do not conform to proper submission standards.
 
-
-*<span style="text-decoration:underline;">Results:</span>*
-
-
-    	(monarch_data/updated_towns_with_counties.csv) +
-
-
+    *<span style="text-decoration:underline;">Results:</span>*
+    
+    (monarch_data/updated_towns_with_counties.csv) +
     (monarch_data/monarch_data_us.csv) is used to create ->
-
-
     (monarch_data/monarch_data_us_with_counties.csv)
 
-
     grep ',NULL$' monarch_data/monarch_data_us_with_counties.csv | wc -l
-
-
-    	1907
-
-
-    	(1907/137662 = 1.38% miss rate)
+        1907
+        (1907/137662 = 1.38% miss rate)
 
 
 
@@ -88,7 +77,7 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
     displayed to the user.
 
     *<span style="text-decoration:underline;">Results:</span>*
-    
+
         Prompt:
         "In which county is the town of {town} located in {state}? The current 
         data suggests it is in {county}. Is this correct? Answer ONLY 'yes' or 
