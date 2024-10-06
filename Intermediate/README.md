@@ -87,7 +87,7 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
     querying if it thinks the county for a row is correct. An error rate is 
     displayed to the user.
 
-    Results:
+    *<span style="text-decoration:underline;">Results:</span>*
         Prompt:
         "In which county is the town of {town} located in {state}? The current 
         data suggests it is in {county}. Is this correct? Answer ONLY 'yes' or 
