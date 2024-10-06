@@ -1,17 +1,3 @@
-Write up detailing section 2.4.1
-
-**task:**
-
-*“Visit Journey North and create a map displaying the number of monarch*
-
-*butterfly sightings by county. Since the dataset only includes city and state*
-
-*information, use an LLM API to programmatically infer the county from*
-
-*the city.”*
-
-**High level summary:**
-
 In order to link a US county to each of the monarch sightings obtained from Journey North, we used a LLM programmatically as suggested in the problem statement. Three python scripts were created to complete this task. 
 
 
@@ -41,20 +27,12 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
 
 
     	(monarch_data/monarch_data_all.csv)
-
-
 		(monarch_data/monarch_data_us.csv)
-
 		(monarch_data/unique_town_state_us.csv)
-
-
-    $ wc -l monarch_data/*:
-
-		150855 monarch_data/monarch_data_all.csv
-
-		137662 monarch_data/monarch_data_us.csv
-
-		13595 monarch_data/unique_town_state_us.csv
+        $ wc -l monarch_data/*:
+		    150855 monarch_data/monarch_data_all.csv
+		    137662 monarch_data/monarch_data_us.csv
+		    13595 monarch_data/unique_town_state_us.csv
 
 
 
@@ -66,28 +44,14 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
     *<span style="text-decoration:underline;">Results:</span>*
 
 
-        Prompt:* “<code>Answer only with the name of the county where the city of {town},{state} is located. Add nothing else. If you can't figure it out quickly, respond with NULL. Nothing else." +</code></em>
-
-
+        Prompt:
+        “Answer only with the name of the county where the city of {town},{state} is located. Add nothing else. If you can't figure it out quickly, respond with NULL. Nothing else."
+        
     	(monarch_data/unique_town_state_us.csv) is used to create ->
+        (monarch_data/updated_towns_with_counties.csv)
 
-
-    (monarch_data/updated_towns_with_counties.csv)
-
-
-    	$ wc -l monarch_data/updated_towns_with_counties.csv
-
-
-    		13595 monarch_data/updated_towns_with_counties.csv
-
-
-    	grep ',NULL$' updated_towns_with_counties.csv | wc -l
-
-
-    		342
-
-
-    		(342/13595 = 2.51% miss rate)
+        $ wc -l monarch_data/updated_towns_with_counties.csv
+        13595 monarch_data/updated_towns_with_counties.csv
 
 3. Execute combine_counties_and_monarch_us.py
 
@@ -118,16 +82,15 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
 
 4. Execute check_correctness_sample.py
 
-    This script feeds the final combined dataset, containing the Journey North data and the GPT generated counties, back into GPT-4 with a simple prompt querying if it thinks the county for a row is correct. An error rate is displayed to the user.
+    This script feeds the final combined dataset, containing the Journey North
+    data and the GPT generated counties, back into GPT-4 with a simple prompt 
+    querying if it thinks the county for a row is correct. An error rate is 
+    displayed to the user.
 
-
-*<span style="text-decoration:underline;">Results:</span>*
-
-
-        Prompt:* “<code>In which county is the town of {town} located in {state}? The current data suggests it is in {county}. Is this correct? Answer ONLY 'yes' or 'no' NOTHING ELSE." +</code></em>
-
-
-    (monarch_data/monarch_data_us_with_counties.csv) returns ->
-
-
-    Error rate: 1.00%
+    Results:
+        Prompt:
+        "In which county is the town of {town} located in {state}? The current 
+        data suggests it is in {county}. Is this correct? Answer ONLY 'yes' or 
+        'no' NOTHING ELSE."
+        (monarch_data/monarch_data_us_with_counties.csv) returns ->
+        Error rate: 1.00%
