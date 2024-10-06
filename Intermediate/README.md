@@ -1,4 +1,4 @@
-In order to link a US county to each of the monarch sightings obtained from Journey North, we used a LLM programmatically as suggested in the problem statement. Three python scripts were created to complete this task. 
+In order to link a US county to each of the monarch sightings obtained from Journey North, we used a LLM programmatically as suggested in the problem statement. Four python scripts were created to complete this task. 
 
 
 **advanced_year_download.py** - generates a CSV dataset of all adult monarch sightings from Journey North HTML pages into a master file, distills the master file into a dataset containing US sightings only, and finally creates a dataset containing only the unique city/state combinations from the US sightings dataset.
@@ -40,7 +40,9 @@ The use of these three scripts allowed us to source all Adult Monarch sightings 
 
 
         Prompt:
-        “Answer only with the name of the county where the city of {town},{state} is located. Add nothing else. If you can't figure it out quickly, respond with NULL. Nothing else."
+        “Answer only with the name of the county where the city of {town},{state} is
+        located. Add nothing else. If you can't figure it out quickly, respond with NULL. 
+        Nothing else."
         
     	(monarch_data/unique_town_state_us.csv) is used to create ->
         (monarch_data/updated_towns_with_counties.csv)
